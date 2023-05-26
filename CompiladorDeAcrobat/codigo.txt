@@ -1,0 +1,8 @@
+FUNCAO INT _factorial (INT x){
+	IF ( x = 0 || x = 1){
+		RETURN 1;
+}
+	ELSE{
+		RETURN (x * _factorial(x - 1))
+	}
+}
