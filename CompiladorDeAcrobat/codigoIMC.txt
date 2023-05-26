@@ -1,0 +1,15 @@
+DECLARATIONS
+   INT peso;
+   INT altura;
+   FLOAT imc;
+ALGORITHM
+
+
+FUNCTION INT MAIN(){
+  JACKIN(altura);
+  JACKIN(peso);
+  ASSIGN imc <- (peso / (altura * altura));
+  JACKOUT("Seu IMC eh ");
+  JACKOUT(imc);
+  RETURN 0;
+}

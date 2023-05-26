@@ -1,0 +1,57 @@
+DECLARATIONS
+   INT contador;
+   INT resultadoFatorial;
+   INT resultadoMaior;
+   FLOAT numeroDecimal;
+   STRING frase;
+   BOOL booleano1;
+
+
+ALGORITHM
+
+
+// Função que retorna o fatorial de um número inteiro:
+FUNCTION INT _factorial (INT x){
+   IF ( x = 0 || x = 1){
+      RETURN 1;
+   }
+   ELSE{
+      RETURN (x * _factorial(x - 1))
+   }
+}
+
+
+// Função que retorna o maior inteiro:
+FUNCTION INT _max(INT x, INT y) {
+   IF ( x > y){
+       RETURN x;
+   }
+   ELSE{
+       RETURN y;
+   }
+}
+
+
+FUNCTION INT MAIN(){
+   ASSIGN contador <- contador + 1;
+   JACKIN(numeroDecimal);
+   ASSIGN frase <- "teste máximo de string 2456";
+   JACKOUT(frase);
+   ASSIGN resultadoFatorial <- _fatorial(contador + 5);
+   ASSIGN resultadoMaior <- _max(10,12);
+   ASSIGN booleano <- (TRUE && FALSE);
+
+
+   WHILE(contador > 0){
+      JACKOUT("ainda dentro do loop");
+      ASSIGN contador <- contador - 1;
+   }
+
+
+
+
+   JACKOUT("Acabou o código");
+
+
+   RETURN 0;
+}
