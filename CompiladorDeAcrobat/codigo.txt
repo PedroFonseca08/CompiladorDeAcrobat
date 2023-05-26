@@ -1,22 +1,11 @@
-DECLARATIONS
-   INT num;
-
-ALGORITHM
-
-FUNCTION INT _fibo(num){
-    IF((num == 0) || (num == 1)){
-        RETURN num;
-    }
-    ELSE{
-        RETURN _fibo(num - 1) + _fibo(num - 2);
-    }
-}
-
 FUNCTION INT MAIN(){
-    JACKOUT("Escolha o numero de iteracoes para sequencia de fibonacci \n");
-    JACKIN(num);
-    JACKOUT("Numero de fibonacci: ");
-    JACKOUT(_fibo(num));
-    RETURN 0;
-    JACKOUT("sdad");
+
+JACKOUT(“Digite seu nome”);
+
+
+JACKIN[%];
+
+
+RETURN 0;
 }
+
