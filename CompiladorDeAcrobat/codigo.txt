@@ -1,8 +1,15 @@
-FUNCAO INT _factorial (INT x){
-	IF ( x = 0 || x = 1){
-		RETURN 1;
-}
-	ELSE{
-		RETURN (x * _factorial(x - 1))
-	}
+DECLARATIONS
+   INT peso;
+   INT altura;
+   FLOAT imc;
+ALGORITHM
+
+
+FUNCTION INT MAIN(){
+  JACKIN(altura);
+  JACKIN(peso);
+  ASSIGN imc <- (peso / (altura * altura));
+  JACKOUT("Seu IMC eh ");
+  JACKOUT(imc);
+  RETURN 0;
 }

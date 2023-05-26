@@ -7,10 +7,10 @@ import java.io.IOException;
 public class ExemploLexer {
 
     public static void main (String[] args){
-        String filename = "C:\\Users\\pedro\\IdeaProjects\\CompiladorDeAcrobat\\codigo.txt";
+        String filename = "C:\\Users\\pedro\\Área de Trabalho\\compilador\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\codigo.txt";
         try{
             CharStream input = CharStreams.fromFileName(filename);
-            testeLexer lexer = new testeLexer(input);
+            compiladorAcrobatLexer lexer = new compiladorAcrobatLexer(input);
             Token token;
             while (!lexer._hitEOF){
                 token = lexer.nextToken();
