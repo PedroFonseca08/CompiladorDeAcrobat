@@ -12,14 +12,13 @@ FALSE: 'FALSE'; // Valor booleano para false
 ARROW: '<-'; // Símbolo de atribuição de valores a uma variável
 OP: '('; // Abre parêntese
 CP: ')'; // Fecha parêntese
-OB: '{'; // Abre aspas
-CB: '}'; // Fecha aspas
-AC: '['; // Abre chaves
-FC: ']'; // Fecha chaves
+OB: '{'; // Abre chaves
+CB: '}'; // Fecha chaves
+AC: '['; // Abre colchetes
+FC: ']'; // Fecha colchetes
 ASGN: 'ASSIGN'; // Indica ter uma atribuição de valor a uma variável
 VAR: [a-z](DIGIT|LETTER)*; // Variáveis devem começar com letra minúscula e seguidos de letras ou dígitos
 NUM: DIGIT+('.'DIGIT+)?; // Números são formados por dígitos e pode possuir um ponto no meio
-BOOL: TRUE | FALSE;  // Booleano é formado por true ou false
 STR : '"' (~["\r\n] | '\\' .)* '"'; // Sequência de caracteres entre aspas
 DELIM: ';'; // Delimitador de instruções
 COMMA: ','; // Separador de parâmetros

@@ -7,7 +7,7 @@ import java.io.IOException;
 public class ExemploLexer {
 
     public static void main (String[] args){
-        String filename = "C:\\Users\\pedro\\Área de Trabalho\\compilador\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\codigoERRO1.txt";
+        String filename = "C:\\Users\\pedro\\Área de Trabalho\\compilador\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\codigoVisaoGeral.txt";
         try{
             CharStream input = CharStreams.fromFileName(filename);
             compiladorAcrobatLexer lexer = new compiladorAcrobatLexer(input);
