@@ -19,7 +19,7 @@ ASGN: 'ASSIGN';
 
 VAR: [a-z](DIGIT|LETTER)*;
 NUM: DIGIT+('.'DIGIT+)?;
-STR: '"'~[/0]*'"';
+STR : '"' (~["\r\n] | '\\' .)* '"';
 DELIM: ';';
 COMMA: ',';
 
