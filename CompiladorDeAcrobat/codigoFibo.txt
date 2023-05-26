@@ -6,7 +6,7 @@ ALGORITHM
 
 
 FUNCTION INT _fibo(num){
-   IF((num == 0) || (num == 1)){
+   IF((num = 0) || (num = 1)){
        RETURN num;
    }
    ELSE{
