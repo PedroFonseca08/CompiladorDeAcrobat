@@ -1,13 +1,9 @@
 DECLARATIONS
 ALGORITHM
-
 MAIN(){
 
-JACKOUT("Digite seu nome");
+    JACKOUT("Digite seu nome");
+    JACKIN[%];
 
-
-JACKIN[%];
-
-
-RETURN 0;
+    RETURN 0;
 }

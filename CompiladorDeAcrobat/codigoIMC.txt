@@ -4,7 +4,6 @@ DECLARATIONS
    FLOAT imc;
 ALGORITHM
 
-
 MAIN(){
   JACKIN(altura);
   JACKIN(peso);

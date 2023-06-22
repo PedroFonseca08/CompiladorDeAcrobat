@@ -1,4 +1,4 @@
-// Generated from .\compiladorAcrobat.g4 by ANTLR 4.7.2
+// Generated from compiladorAcrobat.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -57,45 +57,45 @@ public interface compiladorAcrobatListener extends ParseTreeListener {
 	 */
 	void exitFuncaoChamada(compiladorAcrobatParser.FuncaoChamadaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametrosA}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametros}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametrosA(compiladorAcrobatParser.ParametrosAContext ctx);
+	void enterParametros(compiladorAcrobatParser.ParametrosContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametrosA}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametros}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametrosA(compiladorAcrobatParser.ParametrosAContext ctx);
+	void exitParametros(compiladorAcrobatParser.ParametrosContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametrosB}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametrosChamada}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametrosB(compiladorAcrobatParser.ParametrosBContext ctx);
+	void enterParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametrosB}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametrosChamada}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametrosB(compiladorAcrobatParser.ParametrosBContext ctx);
+	void exitParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametrosChamadaA}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#valorRestrito}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametrosChamadaA(compiladorAcrobatParser.ParametrosChamadaAContext ctx);
+	void enterValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametrosChamadaA}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#valorRestrito}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametrosChamadaA(compiladorAcrobatParser.ParametrosChamadaAContext ctx);
+	void exitValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#parametrosChamadaB}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#valor}.
 	 * @param ctx the parse tree
 	 */
-	void enterParametrosChamadaB(compiladorAcrobatParser.ParametrosChamadaBContext ctx);
+	void enterValor(compiladorAcrobatParser.ValorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#parametrosChamadaB}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#valor}.
 	 * @param ctx the parse tree
 	 */
-	void exitParametrosChamadaB(compiladorAcrobatParser.ParametrosChamadaBContext ctx);
+	void exitValor(compiladorAcrobatParser.ValorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link compiladorAcrobatParser#corpoFunc}.
 	 * @param ctx the parse tree
@@ -147,35 +147,35 @@ public interface compiladorAcrobatListener extends ParseTreeListener {
 	 */
 	void exitAtribuicao(compiladorAcrobatParser.AtribuicaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#comparacao1}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#compIF}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparacao1(compiladorAcrobatParser.Comparacao1Context ctx);
+	void enterCompIF(compiladorAcrobatParser.CompIFContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#comparacao1}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#compIF}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparacao1(compiladorAcrobatParser.Comparacao1Context ctx);
+	void exitCompIF(compiladorAcrobatParser.CompIFContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#comparacao2}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#compELIF}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparacao2(compiladorAcrobatParser.Comparacao2Context ctx);
+	void enterCompELIF(compiladorAcrobatParser.CompELIFContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#comparacao2}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#compELIF}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparacao2(compiladorAcrobatParser.Comparacao2Context ctx);
+	void exitCompELIF(compiladorAcrobatParser.CompELIFContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#comparacao3}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#compELSE}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparacao3(compiladorAcrobatParser.Comparacao3Context ctx);
+	void enterCompELSE(compiladorAcrobatParser.CompELSEContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#comparacao3}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#compELSE}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparacao3(compiladorAcrobatParser.Comparacao3Context ctx);
+	void exitCompELSE(compiladorAcrobatParser.CompELSEContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link compiladorAcrobatParser#repeticao}.
 	 * @param ctx the parse tree
@@ -187,35 +187,25 @@ public interface compiladorAcrobatListener extends ParseTreeListener {
 	 */
 	void exitRepeticao(compiladorAcrobatParser.RepeticaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#retornamento}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#retorno}.
 	 * @param ctx the parse tree
 	 */
-	void enterRetornamento(compiladorAcrobatParser.RetornamentoContext ctx);
+	void enterRetorno(compiladorAcrobatParser.RetornoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#retornamento}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#retorno}.
 	 * @param ctx the parse tree
 	 */
-	void exitRetornamento(compiladorAcrobatParser.RetornamentoContext ctx);
+	void exitRetorno(compiladorAcrobatParser.RetornoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#condicaoA}.
+	 * Enter a parse tree produced by {@link compiladorAcrobatParser#condicao}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondicaoA(compiladorAcrobatParser.CondicaoAContext ctx);
+	void enterCondicao(compiladorAcrobatParser.CondicaoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#condicaoA}.
+	 * Exit a parse tree produced by {@link compiladorAcrobatParser#condicao}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondicaoA(compiladorAcrobatParser.CondicaoAContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link compiladorAcrobatParser#condicaoB}.
-	 * @param ctx the parse tree
-	 */
-	void enterCondicaoB(compiladorAcrobatParser.CondicaoBContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link compiladorAcrobatParser#condicaoB}.
-	 * @param ctx the parse tree
-	 */
-	void exitCondicaoB(compiladorAcrobatParser.CondicaoBContext ctx);
+	void exitCondicao(compiladorAcrobatParser.CondicaoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link compiladorAcrobatParser#operacao}.
 	 * @param ctx the parse tree

@@ -1,0 +1,12 @@
+DECLARATIONS
+    INT altura;
+ALGORITHM
+
+MAIN(){
+
+  JACKIN(altura)
+  JACKOUT("Sua altura eh ");
+  JACKOUT(altura);
+
+  RETURN 0;
+}

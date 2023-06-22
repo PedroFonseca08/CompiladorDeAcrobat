@@ -1,9 +1,6 @@
 DECLARATIONS
   INT num;
-
-
 ALGORITHM
-
 
 FUNCTION INT _fibo(INT num){
    IF((num = 0) || (num = 1)){

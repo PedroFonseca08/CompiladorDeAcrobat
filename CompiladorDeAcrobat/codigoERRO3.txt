@@ -1,0 +1,12 @@
+DECLARATIONS
+    STRING nome;
+ALGORITHM
+
+MAIN(){
+
+  ASSIGN nome <- ("ana" + " paula");
+  JACKOUT("Seu nome eh ");
+  JACKOUT(nome);
+
+  RETURN 0;
+}

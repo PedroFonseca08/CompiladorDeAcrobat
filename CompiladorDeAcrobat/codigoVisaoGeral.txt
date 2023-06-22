@@ -6,9 +6,7 @@ DECLARATIONS
    STRING frase;
    BOOL booleano1;
 
-
 ALGORITHM
-
 
 // Função que retorna o fatorial de um número inteiro:
 FUNCTION INT _factorial (INT x){
@@ -21,7 +19,6 @@ FUNCTION INT _factorial (INT x){
    RETURN 0;
 }
 
-
 // Função que retorna o maior inteiro:
 FUNCTION INT _max(INT x, INT y) {
    IF ( x > y){
@@ -33,7 +30,6 @@ FUNCTION INT _max(INT x, INT y) {
    RETURN 0;
 }
 
-
 MAIN(){
    ASSIGN contador <- contador + 1;
    JACKIN(numeroDecimal);
@@ -43,17 +39,12 @@ MAIN(){
    ASSIGN resultadoMaior <- _max(10,12);
    ASSIGN booleano <- (TRUE && FALSE);
 
-
    WHILE(contador > 0){
       JACKOUT("ainda dentro do loop");
       ASSIGN contador <- contador - 1;
    }
 
-
-
-
    JACKOUT("Acabou o código");
-
 
    RETURN 0;
 }

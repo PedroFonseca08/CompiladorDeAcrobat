@@ -1,4 +1,4 @@
-// Generated from .\compiladorAcrobat.g4 by ANTLR 4.7.2
+// Generated from compiladorAcrobat.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -75,49 +75,49 @@ public class compiladorAcrobatBaseListener implements compiladorAcrobatListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametrosA(compiladorAcrobatParser.ParametrosAContext ctx) { }
+	@Override public void enterParametros(compiladorAcrobatParser.ParametrosContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametrosA(compiladorAcrobatParser.ParametrosAContext ctx) { }
+	@Override public void exitParametros(compiladorAcrobatParser.ParametrosContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametrosB(compiladorAcrobatParser.ParametrosBContext ctx) { }
+	@Override public void enterParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametrosB(compiladorAcrobatParser.ParametrosBContext ctx) { }
+	@Override public void exitParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametrosChamadaA(compiladorAcrobatParser.ParametrosChamadaAContext ctx) { }
+	@Override public void enterValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametrosChamadaA(compiladorAcrobatParser.ParametrosChamadaAContext ctx) { }
+	@Override public void exitValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametrosChamadaB(compiladorAcrobatParser.ParametrosChamadaBContext ctx) { }
+	@Override public void enterValor(compiladorAcrobatParser.ValorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametrosChamadaB(compiladorAcrobatParser.ParametrosChamadaBContext ctx) { }
+	@Override public void exitValor(compiladorAcrobatParser.ValorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -183,37 +183,37 @@ public class compiladorAcrobatBaseListener implements compiladorAcrobatListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparacao1(compiladorAcrobatParser.Comparacao1Context ctx) { }
+	@Override public void enterCompIF(compiladorAcrobatParser.CompIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparacao1(compiladorAcrobatParser.Comparacao1Context ctx) { }
+	@Override public void exitCompIF(compiladorAcrobatParser.CompIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparacao2(compiladorAcrobatParser.Comparacao2Context ctx) { }
+	@Override public void enterCompELIF(compiladorAcrobatParser.CompELIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparacao2(compiladorAcrobatParser.Comparacao2Context ctx) { }
+	@Override public void exitCompELIF(compiladorAcrobatParser.CompELIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparacao3(compiladorAcrobatParser.Comparacao3Context ctx) { }
+	@Override public void enterCompELSE(compiladorAcrobatParser.CompELSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparacao3(compiladorAcrobatParser.Comparacao3Context ctx) { }
+	@Override public void exitCompELSE(compiladorAcrobatParser.CompELSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -231,37 +231,25 @@ public class compiladorAcrobatBaseListener implements compiladorAcrobatListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRetornamento(compiladorAcrobatParser.RetornamentoContext ctx) { }
+	@Override public void enterRetorno(compiladorAcrobatParser.RetornoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRetornamento(compiladorAcrobatParser.RetornamentoContext ctx) { }
+	@Override public void exitRetorno(compiladorAcrobatParser.RetornoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondicaoA(compiladorAcrobatParser.CondicaoAContext ctx) { }
+	@Override public void enterCondicao(compiladorAcrobatParser.CondicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondicaoA(compiladorAcrobatParser.CondicaoAContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCondicaoB(compiladorAcrobatParser.CondicaoBContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCondicaoB(compiladorAcrobatParser.CondicaoBContext ctx) { }
+	@Override public void exitCondicao(compiladorAcrobatParser.CondicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

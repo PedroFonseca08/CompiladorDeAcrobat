@@ -6,29 +6,28 @@ declaracoes: DEC (TYPE VAR ';')*;
 
 //FUNCOES (DECLARACAO E PARAMETROS)
 algoritmo: ALG (funcao)* principal;
-funcao: FUNC TYPE NFUNC '(' parametrosA ')' '{' corpoFunc '}';
-funcaoChamada: NFUNC '(' parametrosChamadaA ')';
-parametrosA: (parametrosB)?;
-parametrosB: TYPE VAR','parametrosB | TYPE VAR;
-parametrosChamadaA: (parametrosChamadaB)?;
-parametrosChamadaB: (VAR|NUM|STR|operacao)','parametrosChamadaB | (VAR|NUM|STR|operacao);
+funcao: FUNC TYPE NFUNC '(' parametros ')' '{' corpoFunc '}';
+funcaoChamada: NFUNC '(' parametrosChamada ')';
+parametros: (TYPE VAR','parametros | TYPE VAR?)? ;
+parametrosChamada: ((valor)','parametrosChamada | (valor))?;
 
+valorRestrito: (VAR | NUM | STR | TRUE | FALSE);
+valor: (valorRestrito | operacao | funcaoChamada);
 
 //CORPO DA FUNCAO
-corpoFunc: (instrucao)* retornamento;
-instrucao: (atribuicao|leitura|escrita|comparacao1|repeticao);
-escrita: 'JACKOUT' '('(VAR|NUM|STR|operacao|funcaoChamada)')'';';
-leitura: 'JACKIN' '('(VAR|NUM|STR)')'';';
-atribuicao: ASGN VAR ARROW ('(')?(VAR|NUM|STR|TRUE|FALSE|operacao|funcaoChamada)(')')?';';
-comparacao1: 'IF' '(' condicaoA ')' '{' (instrucao)* (retornamento)? '}'  comparacao2;
-comparacao2: 'ELSE IF' '(' condicaoA ')' '{' (instrucao)* (retornamento)? '}' comparacao2 | comparacao3;
-comparacao3: ('ELSE' '{' (instrucao)* (retornamento)? '}')?;
-repeticao: LOOP '(' condicaoA ')' '{' (instrucao)+ '}';
-retornamento: RTN ('(')?(VAR|NUM|STR|TRUE|FALSE|operacao)(')')?';';
+corpoFunc: (instrucao)* retorno;
+instrucao: (atribuicao|leitura|escrita|compIF|repeticao);
+escrita: 'JACKOUT' '('(valor)')'';';
+leitura: 'JACKIN' '('valor')'';';
+atribuicao: ASGN VAR ARROW ('(')?(valor)(')')?';';
+compIF: 'IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}'  compELIF;
+compELIF: 'ELSE IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}' compELIF | compELSE;
+compELSE: ('ELSE' '{' (instrucao)* (retorno)?'}')?;
+repeticao: LOOP '(' condicao ')' '{' (instrucao)+ (retorno)?'}';
+retorno: RTN ('(')?(valor)(')')?';';
 
 //CONDICAO
-condicaoA: condicaoB;
-condicaoB: ('(')?(operacao|NUM|VAR|STR|funcaoChamada)(')')? OP_COMP ('(')?(operacao|NUM|VAR|STR|TRUE|FALSE|funcaoChamada)(')')? OP_LOGI condicaoB | ('(')?(operacao|NUM|VAR|STR|funcaoChamada)(')')? OP_COMP ('(')?(operacao|NUM|VAR|STR|TRUE|FALSE|funcaoChamada)(')')?;
+condicao: ('(')? (valor OP_COMP valor (')')? (OP_LOGI condicao )?);
 
 //OPERACAO
 operacao: operando operacao_cauda;
