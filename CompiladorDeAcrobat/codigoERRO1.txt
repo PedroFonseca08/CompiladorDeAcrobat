@@ -1,0 +1,13 @@
+DECLARATIONS
+ALGORITHM
+
+MAIN(){
+
+JACKOUT("Digite seu nome");
+
+
+JACKIN[%];
+
+
+RETURN 0;
+}
