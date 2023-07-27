@@ -15,289 +15,289 @@ public class compiladorAcrobatBaseListener implements compiladorAcrobatListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInicio(compiladorAcrobatParser.InicioContext ctx) { }
+	@Override public void enterNInicio(compiladorAcrobatParser.NInicioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInicio(compiladorAcrobatParser.InicioContext ctx) { }
+	@Override public void exitNInicio(compiladorAcrobatParser.NInicioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaracoes(compiladorAcrobatParser.DeclaracoesContext ctx) { }
+	@Override public void enterBlocoDeclaracao(compiladorAcrobatParser.BlocoDeclaracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaracoes(compiladorAcrobatParser.DeclaracoesContext ctx) { }
+	@Override public void exitBlocoDeclaracao(compiladorAcrobatParser.BlocoDeclaracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAlgoritmo(compiladorAcrobatParser.AlgoritmoContext ctx) { }
+	@Override public void enterBlocoAlgoritmo(compiladorAcrobatParser.BlocoAlgoritmoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAlgoritmo(compiladorAcrobatParser.AlgoritmoContext ctx) { }
+	@Override public void exitBlocoAlgoritmo(compiladorAcrobatParser.BlocoAlgoritmoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncao(compiladorAcrobatParser.FuncaoContext ctx) { }
+	@Override public void enterBlocoFuncao(compiladorAcrobatParser.BlocoFuncaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncao(compiladorAcrobatParser.FuncaoContext ctx) { }
+	@Override public void exitBlocoFuncao(compiladorAcrobatParser.BlocoFuncaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncaoChamada(compiladorAcrobatParser.FuncaoChamadaContext ctx) { }
+	@Override public void enterNFuncaoChamada(compiladorAcrobatParser.NFuncaoChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncaoChamada(compiladorAcrobatParser.FuncaoChamadaContext ctx) { }
+	@Override public void exitNFuncaoChamada(compiladorAcrobatParser.NFuncaoChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametros(compiladorAcrobatParser.ParametrosContext ctx) { }
+	@Override public void enterNParametros(compiladorAcrobatParser.NParametrosContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametros(compiladorAcrobatParser.ParametrosContext ctx) { }
+	@Override public void exitNParametros(compiladorAcrobatParser.NParametrosContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx) { }
+	@Override public void enterNParametrosChamada(compiladorAcrobatParser.NParametrosChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParametrosChamada(compiladorAcrobatParser.ParametrosChamadaContext ctx) { }
+	@Override public void exitNParametrosChamada(compiladorAcrobatParser.NParametrosChamadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx) { }
+	@Override public void enterNValorRestrito(compiladorAcrobatParser.NValorRestritoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValorRestrito(compiladorAcrobatParser.ValorRestritoContext ctx) { }
+	@Override public void exitNValorRestrito(compiladorAcrobatParser.NValorRestritoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValor(compiladorAcrobatParser.ValorContext ctx) { }
+	@Override public void enterNValor(compiladorAcrobatParser.NValorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValor(compiladorAcrobatParser.ValorContext ctx) { }
+	@Override public void exitNValor(compiladorAcrobatParser.NValorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCorpoFunc(compiladorAcrobatParser.CorpoFuncContext ctx) { }
+	@Override public void enterNCorpoFuncao(compiladorAcrobatParser.NCorpoFuncaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCorpoFunc(compiladorAcrobatParser.CorpoFuncContext ctx) { }
+	@Override public void exitNCorpoFuncao(compiladorAcrobatParser.NCorpoFuncaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInstrucao(compiladorAcrobatParser.InstrucaoContext ctx) { }
+	@Override public void enterNInstrucao(compiladorAcrobatParser.NInstrucaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInstrucao(compiladorAcrobatParser.InstrucaoContext ctx) { }
+	@Override public void exitNInstrucao(compiladorAcrobatParser.NInstrucaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEscrita(compiladorAcrobatParser.EscritaContext ctx) { }
+	@Override public void enterNEscrita(compiladorAcrobatParser.NEscritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEscrita(compiladorAcrobatParser.EscritaContext ctx) { }
+	@Override public void exitNEscrita(compiladorAcrobatParser.NEscritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLeitura(compiladorAcrobatParser.LeituraContext ctx) { }
+	@Override public void enterNLeitura(compiladorAcrobatParser.NLeituraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLeitura(compiladorAcrobatParser.LeituraContext ctx) { }
+	@Override public void exitNLeitura(compiladorAcrobatParser.NLeituraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtribuicao(compiladorAcrobatParser.AtribuicaoContext ctx) { }
+	@Override public void enterNAtribuicao(compiladorAcrobatParser.NAtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtribuicao(compiladorAcrobatParser.AtribuicaoContext ctx) { }
+	@Override public void exitNAtribuicao(compiladorAcrobatParser.NAtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompIF(compiladorAcrobatParser.CompIFContext ctx) { }
+	@Override public void enterNCompIF(compiladorAcrobatParser.NCompIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompIF(compiladorAcrobatParser.CompIFContext ctx) { }
+	@Override public void exitNCompIF(compiladorAcrobatParser.NCompIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompELIF(compiladorAcrobatParser.CompELIFContext ctx) { }
+	@Override public void enterNCompELIF(compiladorAcrobatParser.NCompELIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompELIF(compiladorAcrobatParser.CompELIFContext ctx) { }
+	@Override public void exitNCompELIF(compiladorAcrobatParser.NCompELIFContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompELSE(compiladorAcrobatParser.CompELSEContext ctx) { }
+	@Override public void enterNCompELSE(compiladorAcrobatParser.NCompELSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompELSE(compiladorAcrobatParser.CompELSEContext ctx) { }
+	@Override public void exitNCompELSE(compiladorAcrobatParser.NCompELSEContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRepeticao(compiladorAcrobatParser.RepeticaoContext ctx) { }
+	@Override public void enterNRepeticao(compiladorAcrobatParser.NRepeticaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRepeticao(compiladorAcrobatParser.RepeticaoContext ctx) { }
+	@Override public void exitNRepeticao(compiladorAcrobatParser.NRepeticaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRetorno(compiladorAcrobatParser.RetornoContext ctx) { }
+	@Override public void enterNRetorno(compiladorAcrobatParser.NRetornoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRetorno(compiladorAcrobatParser.RetornoContext ctx) { }
+	@Override public void exitNRetorno(compiladorAcrobatParser.NRetornoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondicao(compiladorAcrobatParser.CondicaoContext ctx) { }
+	@Override public void enterNCondicao(compiladorAcrobatParser.NCondicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondicao(compiladorAcrobatParser.CondicaoContext ctx) { }
+	@Override public void exitNCondicao(compiladorAcrobatParser.NCondicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperacao(compiladorAcrobatParser.OperacaoContext ctx) { }
+	@Override public void enterNOperacao(compiladorAcrobatParser.NOperacaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperacao(compiladorAcrobatParser.OperacaoContext ctx) { }
+	@Override public void exitNOperacao(compiladorAcrobatParser.NOperacaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperando(compiladorAcrobatParser.OperandoContext ctx) { }
+	@Override public void enterNOperando(compiladorAcrobatParser.NOperandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperando(compiladorAcrobatParser.OperandoContext ctx) { }
+	@Override public void exitNOperando(compiladorAcrobatParser.NOperandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperacao_cauda(compiladorAcrobatParser.Operacao_caudaContext ctx) { }
+	@Override public void enterNOperacao_cauda(compiladorAcrobatParser.NOperacao_caudaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperacao_cauda(compiladorAcrobatParser.Operacao_caudaContext ctx) { }
+	@Override public void exitNOperacao_cauda(compiladorAcrobatParser.NOperacao_caudaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrincipal(compiladorAcrobatParser.PrincipalContext ctx) { }
+	@Override public void enterBlocoPrincipal(compiladorAcrobatParser.BlocoPrincipalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrincipal(compiladorAcrobatParser.PrincipalContext ctx) { }
+	@Override public void exitBlocoPrincipal(compiladorAcrobatParser.BlocoPrincipalContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

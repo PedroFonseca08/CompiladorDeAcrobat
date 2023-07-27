@@ -1,41 +1,41 @@
 grammar compiladorAcrobat;
 
 //DECLARACOES
-inicio: declaracoes algoritmo EOF;
-declaracoes: DEC (TYPE VAR ';')*;
+inicio: declaracoes algoritmo EOF #NInicio;
+declaracoes: DEC (TYPE VAR ';')* #BlocoDeclaracao;
 
 //FUNCOES (DECLARACAO E PARAMETROS)
-algoritmo: ALG (funcao)* principal;
-funcao: FUNC TYPE NFUNC '(' parametros ')' '{' corpoFunc '}';
-funcaoChamada: NFUNC '(' parametrosChamada ')';
-parametros: (TYPE VAR','parametros | TYPE VAR?)? ;
-parametrosChamada: ((valor)','parametrosChamada | (valor))?;
+algoritmo: ALG (funcao)* principal #BlocoAlgoritmo;
+funcao: FUNC TYPE NFUNC '(' parametros ')' '{' corpoFunc '}' #BlocoFuncao;
+funcaoChamada: NFUNC '(' parametrosChamada ')' #NFuncaoChamada;
+parametros: (TYPE VAR','parametros | TYPE VAR?)?  #NParametros;
+parametrosChamada: ((valor)','parametrosChamada | (valor))? #NParametrosChamada;
 
-valorRestrito: (VAR | NUM | STR | TRUE | FALSE);
-valor: (valorRestrito | operacao | funcaoChamada);
+valorRestrito: (VAR | NUM | STR | TRUE | FALSE) #NValorRestrito;
+valor: (valorRestrito | operacao | funcaoChamada) #NValor;
 
 //CORPO DA FUNCAO
-corpoFunc: (instrucao)* retorno;
-instrucao: (atribuicao|leitura|escrita|compIF|repeticao);
-escrita: 'JACKOUT' '('(valor)')'';';
-leitura: 'JACKIN' '('valor')'';';
-atribuicao: ASGN VAR ARROW ('(')?(valor)(')')?';';
-compIF: 'IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}'  compELIF;
-compELIF: 'ELSE IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}' compELIF | compELSE;
-compELSE: ('ELSE' '{' (instrucao)* (retorno)?'}')?;
-repeticao: LOOP '(' condicao ')' '{' (instrucao)+ (retorno)?'}';
-retorno: RTN ('(')?(valor)(')')?';';
+corpoFunc: (instrucao)* retorno #NCorpoFuncao;
+instrucao: (atribuicao|leitura|escrita|compIF|repeticao) #NInstrucao;
+escrita: 'JACKOUT' '('(valor)')'';' #NEscrita;
+leitura: 'JACKIN' '('valor')'';' #NLeitura;
+atribuicao: ASGN VAR ARROW ('(')?(valor)(')')?';' #NAtribuicao;
+compIF: 'IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}'  compELIF #NCompIF;
+compELIF: 'ELSE IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}' compELIF #NCompELIF| compELSE #NCompELIF;
+compELSE: ('ELSE' '{' (instrucao)* (retorno)?'}')? #NCompELSE;
+repeticao: LOOP '(' condicao ')' '{' (instrucao)+ (retorno)?'}' #NRepeticao;
+retorno: RTN ('(')?(valor)(')')?';' #NRetorno;
 
 //CONDICAO
-condicao: ('(')? (valor OP_COMP valor (')')? (OP_LOGI condicao )?);
+condicao: ('(')? (valor OP_COMP valor (')')? (OP_LOGI condicao )?) #NCondicao;
 
 //OPERACAO
-operacao: operando operacao_cauda;
-operando: ('(')?(NUM|VAR|funcaoChamada|TRUE|FALSE)(')')?;
-operacao_cauda: (OP_ARIT|OP_LOGI) operando (operacao_cauda)*;
+operacao: operando operacao_cauda #NOperacao;
+operando: ('(')?(NUM|VAR|funcaoChamada|TRUE|FALSE)(')')? #NOperando;
+operacao_cauda: (OP_ARIT|OP_LOGI) operando (operacao_cauda)* #NOperacao_cauda;
 
 //MAIN
-principal: MAIN '('  ')'  '{' corpoFunc '}';
+principal: MAIN '('  ')'  '{' corpoFunc '}' #BlocoPrincipal;
 
 
 

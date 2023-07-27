@@ -108,6 +108,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class InicioContext extends ParserRuleContext {
+		public InicioContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_inicio; }
+	 
+		public InicioContext() { }
+		public void copyFrom(InicioContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NInicioContext extends InicioContext {
 		public DeclaracoesContext declaracoes() {
 			return getRuleContext(DeclaracoesContext.class,0);
 		}
@@ -115,17 +126,14 @@ public class compiladorAcrobatParser extends Parser {
 			return getRuleContext(AlgoritmoContext.class,0);
 		}
 		public TerminalNode EOF() { return getToken(compiladorAcrobatParser.EOF, 0); }
-		public InicioContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_inicio; }
+		public NInicioContext(InicioContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterInicio(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNInicio(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitInicio(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNInicio(this);
 		}
 	}
 
@@ -133,6 +141,7 @@ public class compiladorAcrobatParser extends Parser {
 		InicioContext _localctx = new InicioContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_inicio);
 		try {
+			_localctx = new NInicioContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(48);
@@ -155,6 +164,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class DeclaracoesContext extends ParserRuleContext {
+		public DeclaracoesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_declaracoes; }
+	 
+		public DeclaracoesContext() { }
+		public void copyFrom(DeclaracoesContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class BlocoDeclaracaoContext extends DeclaracoesContext {
 		public TerminalNode DEC() { return getToken(compiladorAcrobatParser.DEC, 0); }
 		public List<TerminalNode> TYPE() { return getTokens(compiladorAcrobatParser.TYPE); }
 		public TerminalNode TYPE(int i) {
@@ -168,17 +188,14 @@ public class compiladorAcrobatParser extends Parser {
 		public TerminalNode DELIM(int i) {
 			return getToken(compiladorAcrobatParser.DELIM, i);
 		}
-		public DeclaracoesContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_declaracoes; }
+		public BlocoDeclaracaoContext(DeclaracoesContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterDeclaracoes(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterBlocoDeclaracao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitDeclaracoes(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitBlocoDeclaracao(this);
 		}
 	}
 
@@ -187,6 +204,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 2, RULE_declaracoes);
 		int _la;
 		try {
+			_localctx = new BlocoDeclaracaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(52);
@@ -223,6 +241,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class AlgoritmoContext extends ParserRuleContext {
+		public AlgoritmoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_algoritmo; }
+	 
+		public AlgoritmoContext() { }
+		public void copyFrom(AlgoritmoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class BlocoAlgoritmoContext extends AlgoritmoContext {
 		public TerminalNode ALG() { return getToken(compiladorAcrobatParser.ALG, 0); }
 		public PrincipalContext principal() {
 			return getRuleContext(PrincipalContext.class,0);
@@ -233,17 +262,14 @@ public class compiladorAcrobatParser extends Parser {
 		public FuncaoContext funcao(int i) {
 			return getRuleContext(FuncaoContext.class,i);
 		}
-		public AlgoritmoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_algoritmo; }
+		public BlocoAlgoritmoContext(AlgoritmoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterAlgoritmo(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterBlocoAlgoritmo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitAlgoritmo(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitBlocoAlgoritmo(this);
 		}
 	}
 
@@ -252,6 +278,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 4, RULE_algoritmo);
 		int _la;
 		try {
+			_localctx = new BlocoAlgoritmoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(61);
@@ -286,6 +313,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class FuncaoContext extends ParserRuleContext {
+		public FuncaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_funcao; }
+	 
+		public FuncaoContext() { }
+		public void copyFrom(FuncaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class BlocoFuncaoContext extends FuncaoContext {
 		public TerminalNode FUNC() { return getToken(compiladorAcrobatParser.FUNC, 0); }
 		public TerminalNode TYPE() { return getToken(compiladorAcrobatParser.TYPE, 0); }
 		public TerminalNode NFUNC() { return getToken(compiladorAcrobatParser.NFUNC, 0); }
@@ -299,17 +337,14 @@ public class compiladorAcrobatParser extends Parser {
 			return getRuleContext(CorpoFuncContext.class,0);
 		}
 		public TerminalNode CB() { return getToken(compiladorAcrobatParser.CB, 0); }
-		public FuncaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_funcao; }
+		public BlocoFuncaoContext(FuncaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterFuncao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterBlocoFuncao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitFuncao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitBlocoFuncao(this);
 		}
 	}
 
@@ -317,6 +352,7 @@ public class compiladorAcrobatParser extends Parser {
 		FuncaoContext _localctx = new FuncaoContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_funcao);
 		try {
+			_localctx = new BlocoFuncaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(70);
@@ -351,23 +387,31 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class FuncaoChamadaContext extends ParserRuleContext {
+		public FuncaoChamadaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_funcaoChamada; }
+	 
+		public FuncaoChamadaContext() { }
+		public void copyFrom(FuncaoChamadaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NFuncaoChamadaContext extends FuncaoChamadaContext {
 		public TerminalNode NFUNC() { return getToken(compiladorAcrobatParser.NFUNC, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public ParametrosChamadaContext parametrosChamada() {
 			return getRuleContext(ParametrosChamadaContext.class,0);
 		}
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
-		public FuncaoChamadaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_funcaoChamada; }
+		public NFuncaoChamadaContext(FuncaoChamadaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterFuncaoChamada(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNFuncaoChamada(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitFuncaoChamada(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNFuncaoChamada(this);
 		}
 	}
 
@@ -375,6 +419,7 @@ public class compiladorAcrobatParser extends Parser {
 		FuncaoChamadaContext _localctx = new FuncaoChamadaContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_funcaoChamada);
 		try {
+			_localctx = new NFuncaoChamadaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(80);
@@ -399,23 +444,31 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class ParametrosContext extends ParserRuleContext {
+		public ParametrosContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_parametros; }
+	 
+		public ParametrosContext() { }
+		public void copyFrom(ParametrosContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NParametrosContext extends ParametrosContext {
 		public TerminalNode TYPE() { return getToken(compiladorAcrobatParser.TYPE, 0); }
 		public TerminalNode VAR() { return getToken(compiladorAcrobatParser.VAR, 0); }
 		public TerminalNode COMMA() { return getToken(compiladorAcrobatParser.COMMA, 0); }
 		public ParametrosContext parametros() {
 			return getRuleContext(ParametrosContext.class,0);
 		}
-		public ParametrosContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parametros; }
+		public NParametrosContext(ParametrosContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterParametros(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNParametros(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitParametros(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNParametros(this);
 		}
 	}
 
@@ -424,6 +477,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 10, RULE_parametros);
 		int _la;
 		try {
+			_localctx = new NParametrosContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(93);
@@ -472,6 +526,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class ParametrosChamadaContext extends ParserRuleContext {
+		public ParametrosChamadaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_parametrosChamada; }
+	 
+		public ParametrosChamadaContext() { }
+		public void copyFrom(ParametrosChamadaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NParametrosChamadaContext extends ParametrosChamadaContext {
 		public TerminalNode COMMA() { return getToken(compiladorAcrobatParser.COMMA, 0); }
 		public ParametrosChamadaContext parametrosChamada() {
 			return getRuleContext(ParametrosChamadaContext.class,0);
@@ -479,17 +544,14 @@ public class compiladorAcrobatParser extends Parser {
 		public ValorContext valor() {
 			return getRuleContext(ValorContext.class,0);
 		}
-		public ParametrosChamadaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parametrosChamada; }
+		public NParametrosChamadaContext(ParametrosChamadaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterParametrosChamada(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNParametrosChamada(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitParametrosChamada(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNParametrosChamada(this);
 		}
 	}
 
@@ -497,6 +559,7 @@ public class compiladorAcrobatParser extends Parser {
 		ParametrosChamadaContext _localctx = new ParametrosChamadaContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_parametrosChamada);
 		try {
+			_localctx = new NParametrosChamadaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(100);
@@ -537,22 +600,30 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class ValorRestritoContext extends ParserRuleContext {
+		public ValorRestritoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_valorRestrito; }
+	 
+		public ValorRestritoContext() { }
+		public void copyFrom(ValorRestritoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NValorRestritoContext extends ValorRestritoContext {
 		public TerminalNode VAR() { return getToken(compiladorAcrobatParser.VAR, 0); }
 		public TerminalNode NUM() { return getToken(compiladorAcrobatParser.NUM, 0); }
 		public TerminalNode STR() { return getToken(compiladorAcrobatParser.STR, 0); }
 		public TerminalNode TRUE() { return getToken(compiladorAcrobatParser.TRUE, 0); }
 		public TerminalNode FALSE() { return getToken(compiladorAcrobatParser.FALSE, 0); }
-		public ValorRestritoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_valorRestrito; }
+		public NValorRestritoContext(ValorRestritoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterValorRestrito(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNValorRestrito(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitValorRestrito(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNValorRestrito(this);
 		}
 	}
 
@@ -561,6 +632,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 14, RULE_valorRestrito);
 		int _la;
 		try {
+			_localctx = new NValorRestritoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(102);
@@ -587,6 +659,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class ValorContext extends ParserRuleContext {
+		public ValorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_valor; }
+	 
+		public ValorContext() { }
+		public void copyFrom(ValorContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NValorContext extends ValorContext {
 		public ValorRestritoContext valorRestrito() {
 			return getRuleContext(ValorRestritoContext.class,0);
 		}
@@ -596,17 +679,14 @@ public class compiladorAcrobatParser extends Parser {
 		public FuncaoChamadaContext funcaoChamada() {
 			return getRuleContext(FuncaoChamadaContext.class,0);
 		}
-		public ValorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_valor; }
+		public NValorContext(ValorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterValor(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNValor(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitValor(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNValor(this);
 		}
 	}
 
@@ -614,6 +694,7 @@ public class compiladorAcrobatParser extends Parser {
 		ValorContext _localctx = new ValorContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_valor);
 		try {
+			_localctx = new NValorContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(107);
@@ -652,6 +733,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class CorpoFuncContext extends ParserRuleContext {
+		public CorpoFuncContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_corpoFunc; }
+	 
+		public CorpoFuncContext() { }
+		public void copyFrom(CorpoFuncContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NCorpoFuncaoContext extends CorpoFuncContext {
 		public RetornoContext retorno() {
 			return getRuleContext(RetornoContext.class,0);
 		}
@@ -661,17 +753,14 @@ public class compiladorAcrobatParser extends Parser {
 		public InstrucaoContext instrucao(int i) {
 			return getRuleContext(InstrucaoContext.class,i);
 		}
-		public CorpoFuncContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_corpoFunc; }
+		public NCorpoFuncaoContext(CorpoFuncContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterCorpoFunc(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNCorpoFuncao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitCorpoFunc(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNCorpoFuncao(this);
 		}
 	}
 
@@ -680,6 +769,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 18, RULE_corpoFunc);
 		int _la;
 		try {
+			_localctx = new NCorpoFuncaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(112);
@@ -712,6 +802,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class InstrucaoContext extends ParserRuleContext {
+		public InstrucaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_instrucao; }
+	 
+		public InstrucaoContext() { }
+		public void copyFrom(InstrucaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NInstrucaoContext extends InstrucaoContext {
 		public AtribuicaoContext atribuicao() {
 			return getRuleContext(AtribuicaoContext.class,0);
 		}
@@ -727,17 +828,14 @@ public class compiladorAcrobatParser extends Parser {
 		public RepeticaoContext repeticao() {
 			return getRuleContext(RepeticaoContext.class,0);
 		}
-		public InstrucaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_instrucao; }
+		public NInstrucaoContext(InstrucaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterInstrucao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNInstrucao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitInstrucao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNInstrucao(this);
 		}
 	}
 
@@ -745,6 +843,7 @@ public class compiladorAcrobatParser extends Parser {
 		InstrucaoContext _localctx = new InstrucaoContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_instrucao);
 		try {
+			_localctx = new NInstrucaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(122);
@@ -797,6 +896,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class EscritaContext extends ParserRuleContext {
+		public EscritaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_escrita; }
+	 
+		public EscritaContext() { }
+		public void copyFrom(EscritaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NEscritaContext extends EscritaContext {
 		public TerminalNode OUT() { return getToken(compiladorAcrobatParser.OUT, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
@@ -804,17 +914,14 @@ public class compiladorAcrobatParser extends Parser {
 		public ValorContext valor() {
 			return getRuleContext(ValorContext.class,0);
 		}
-		public EscritaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_escrita; }
+		public NEscritaContext(EscritaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterEscrita(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNEscrita(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitEscrita(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNEscrita(this);
 		}
 	}
 
@@ -822,6 +929,7 @@ public class compiladorAcrobatParser extends Parser {
 		EscritaContext _localctx = new EscritaContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_escrita);
 		try {
+			_localctx = new NEscritaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(124);
@@ -850,6 +958,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class LeituraContext extends ParserRuleContext {
+		public LeituraContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_leitura; }
+	 
+		public LeituraContext() { }
+		public void copyFrom(LeituraContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NLeituraContext extends LeituraContext {
 		public TerminalNode IN() { return getToken(compiladorAcrobatParser.IN, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public ValorContext valor() {
@@ -857,17 +976,14 @@ public class compiladorAcrobatParser extends Parser {
 		}
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
 		public TerminalNode DELIM() { return getToken(compiladorAcrobatParser.DELIM, 0); }
-		public LeituraContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_leitura; }
+		public NLeituraContext(LeituraContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterLeitura(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNLeitura(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitLeitura(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNLeitura(this);
 		}
 	}
 
@@ -875,6 +991,7 @@ public class compiladorAcrobatParser extends Parser {
 		LeituraContext _localctx = new LeituraContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_leitura);
 		try {
+			_localctx = new NLeituraContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(130);
@@ -901,6 +1018,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class AtribuicaoContext extends ParserRuleContext {
+		public AtribuicaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_atribuicao; }
+	 
+		public AtribuicaoContext() { }
+		public void copyFrom(AtribuicaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NAtribuicaoContext extends AtribuicaoContext {
 		public TerminalNode ASGN() { return getToken(compiladorAcrobatParser.ASGN, 0); }
 		public TerminalNode VAR() { return getToken(compiladorAcrobatParser.VAR, 0); }
 		public TerminalNode ARROW() { return getToken(compiladorAcrobatParser.ARROW, 0); }
@@ -910,17 +1038,14 @@ public class compiladorAcrobatParser extends Parser {
 		}
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
-		public AtribuicaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_atribuicao; }
+		public NAtribuicaoContext(AtribuicaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterAtribuicao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNAtribuicao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitAtribuicao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNAtribuicao(this);
 		}
 	}
 
@@ -929,6 +1054,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 26, RULE_atribuicao);
 		int _la;
 		try {
+			_localctx = new NAtribuicaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(136);
@@ -977,6 +1103,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class CompIFContext extends ParserRuleContext {
+		public CompIFContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_compIF; }
+	 
+		public CompIFContext() { }
+		public void copyFrom(CompIFContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NCompIFContext extends CompIFContext {
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public CondicaoContext condicao() {
 			return getRuleContext(CondicaoContext.class,0);
@@ -996,17 +1133,14 @@ public class compiladorAcrobatParser extends Parser {
 		public RetornoContext retorno() {
 			return getRuleContext(RetornoContext.class,0);
 		}
-		public CompIFContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_compIF; }
+		public NCompIFContext(CompIFContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterCompIF(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNCompIF(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitCompIF(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNCompIF(this);
 		}
 	}
 
@@ -1015,6 +1149,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 28, RULE_compIF);
 		int _la;
 		try {
+			_localctx = new NCompIFContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(148);
@@ -1069,6 +1204,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class CompELIFContext extends ParserRuleContext {
+		public CompELIFContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_compELIF; }
+	 
+		public CompELIFContext() { }
+		public void copyFrom(CompELIFContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NCompELIFContext extends CompELIFContext {
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public CondicaoContext condicao() {
 			return getRuleContext(CondicaoContext.class,0);
@@ -1091,17 +1237,14 @@ public class compiladorAcrobatParser extends Parser {
 		public CompELSEContext compELSE() {
 			return getRuleContext(CompELSEContext.class,0);
 		}
-		public CompELIFContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_compELIF; }
+		public NCompELIFContext(CompELIFContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterCompELIF(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNCompELIF(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitCompELIF(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNCompELIF(this);
 		}
 	}
 
@@ -1114,6 +1257,7 @@ public class compiladorAcrobatParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
+				_localctx = new NCompELIFContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(165);
@@ -1164,6 +1308,7 @@ public class compiladorAcrobatParser extends Parser {
 			case ASGN:
 			case LOOP:
 			case RTN:
+				_localctx = new NCompELIFContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(182);
@@ -1186,6 +1331,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class CompELSEContext extends ParserRuleContext {
+		public CompELSEContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_compELSE; }
+	 
+		public CompELSEContext() { }
+		public void copyFrom(CompELSEContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NCompELSEContext extends CompELSEContext {
 		public TerminalNode OB() { return getToken(compiladorAcrobatParser.OB, 0); }
 		public TerminalNode CB() { return getToken(compiladorAcrobatParser.CB, 0); }
 		public List<InstrucaoContext> instrucao() {
@@ -1197,17 +1353,14 @@ public class compiladorAcrobatParser extends Parser {
 		public RetornoContext retorno() {
 			return getRuleContext(RetornoContext.class,0);
 		}
-		public CompELSEContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_compELSE; }
+		public NCompELSEContext(CompELSEContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterCompELSE(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNCompELSE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitCompELSE(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNCompELSE(this);
 		}
 	}
 
@@ -1216,6 +1369,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 32, RULE_compELSE);
 		int _la;
 		try {
+			_localctx = new NCompELSEContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(197);
@@ -1270,6 +1424,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class RepeticaoContext extends ParserRuleContext {
+		public RepeticaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_repeticao; }
+	 
+		public RepeticaoContext() { }
+		public void copyFrom(RepeticaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NRepeticaoContext extends RepeticaoContext {
 		public TerminalNode LOOP() { return getToken(compiladorAcrobatParser.LOOP, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public CondicaoContext condicao() {
@@ -1287,17 +1452,14 @@ public class compiladorAcrobatParser extends Parser {
 		public RetornoContext retorno() {
 			return getRuleContext(RetornoContext.class,0);
 		}
-		public RepeticaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_repeticao; }
+		public NRepeticaoContext(RepeticaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterRepeticao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNRepeticao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitRepeticao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNRepeticao(this);
 		}
 	}
 
@@ -1306,6 +1468,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 34, RULE_repeticao);
 		int _la;
 		try {
+			_localctx = new NRepeticaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(199);
@@ -1358,6 +1521,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class RetornoContext extends ParserRuleContext {
+		public RetornoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_retorno; }
+	 
+		public RetornoContext() { }
+		public void copyFrom(RetornoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NRetornoContext extends RetornoContext {
 		public TerminalNode RTN() { return getToken(compiladorAcrobatParser.RTN, 0); }
 		public TerminalNode DELIM() { return getToken(compiladorAcrobatParser.DELIM, 0); }
 		public ValorContext valor() {
@@ -1365,17 +1539,14 @@ public class compiladorAcrobatParser extends Parser {
 		}
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
-		public RetornoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_retorno; }
+		public NRetornoContext(RetornoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterRetorno(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNRetorno(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitRetorno(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNRetorno(this);
 		}
 	}
 
@@ -1384,6 +1555,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 36, RULE_retorno);
 		int _la;
 		try {
+			_localctx = new NRetornoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(214);
@@ -1428,6 +1600,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class CondicaoContext extends ParserRuleContext {
+		public CondicaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_condicao; }
+	 
+		public CondicaoContext() { }
+		public void copyFrom(CondicaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NCondicaoContext extends CondicaoContext {
 		public List<ValorContext> valor() {
 			return getRuleContexts(ValorContext.class);
 		}
@@ -1441,17 +1624,14 @@ public class compiladorAcrobatParser extends Parser {
 		public CondicaoContext condicao() {
 			return getRuleContext(CondicaoContext.class,0);
 		}
-		public CondicaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_condicao; }
+		public NCondicaoContext(CondicaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterCondicao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNCondicao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitCondicao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNCondicao(this);
 		}
 	}
 
@@ -1460,6 +1640,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 38, RULE_condicao);
 		int _la;
 		try {
+			_localctx = new NCondicaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(225);
@@ -1516,23 +1697,31 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class OperacaoContext extends ParserRuleContext {
+		public OperacaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operacao; }
+	 
+		public OperacaoContext() { }
+		public void copyFrom(OperacaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NOperacaoContext extends OperacaoContext {
 		public OperandoContext operando() {
 			return getRuleContext(OperandoContext.class,0);
 		}
 		public Operacao_caudaContext operacao_cauda() {
 			return getRuleContext(Operacao_caudaContext.class,0);
 		}
-		public OperacaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_operacao; }
+		public NOperacaoContext(OperacaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterOperacao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNOperacao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitOperacao(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNOperacao(this);
 		}
 	}
 
@@ -1540,6 +1729,7 @@ public class compiladorAcrobatParser extends Parser {
 		OperacaoContext _localctx = new OperacaoContext(_ctx, getState());
 		enterRule(_localctx, 40, RULE_operacao);
 		try {
+			_localctx = new NOperacaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(237);
@@ -1560,6 +1750,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class OperandoContext extends ParserRuleContext {
+		public OperandoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operando; }
+	 
+		public OperandoContext() { }
+		public void copyFrom(OperandoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NOperandoContext extends OperandoContext {
 		public TerminalNode NUM() { return getToken(compiladorAcrobatParser.NUM, 0); }
 		public TerminalNode VAR() { return getToken(compiladorAcrobatParser.VAR, 0); }
 		public FuncaoChamadaContext funcaoChamada() {
@@ -1569,17 +1770,14 @@ public class compiladorAcrobatParser extends Parser {
 		public TerminalNode FALSE() { return getToken(compiladorAcrobatParser.FALSE, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
-		public OperandoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_operando; }
+		public NOperandoContext(OperandoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterOperando(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNOperando(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitOperando(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNOperando(this);
 		}
 	}
 
@@ -1588,6 +1786,7 @@ public class compiladorAcrobatParser extends Parser {
 		enterRule(_localctx, 42, RULE_operando);
 		int _la;
 		try {
+			_localctx = new NOperandoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(241);
@@ -1660,6 +1859,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class Operacao_caudaContext extends ParserRuleContext {
+		public Operacao_caudaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operacao_cauda; }
+	 
+		public Operacao_caudaContext() { }
+		public void copyFrom(Operacao_caudaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NOperacao_caudaContext extends Operacao_caudaContext {
 		public OperandoContext operando() {
 			return getRuleContext(OperandoContext.class,0);
 		}
@@ -1671,17 +1881,14 @@ public class compiladorAcrobatParser extends Parser {
 		public Operacao_caudaContext operacao_cauda(int i) {
 			return getRuleContext(Operacao_caudaContext.class,i);
 		}
-		public Operacao_caudaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_operacao_cauda; }
+		public NOperacao_caudaContext(Operacao_caudaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterOperacao_cauda(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterNOperacao_cauda(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitOperacao_cauda(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitNOperacao_cauda(this);
 		}
 	}
 
@@ -1691,6 +1898,7 @@ public class compiladorAcrobatParser extends Parser {
 		int _la;
 		try {
 			int _alt;
+			_localctx = new NOperacao_caudaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(253);
@@ -1735,6 +1943,17 @@ public class compiladorAcrobatParser extends Parser {
 	}
 
 	public static class PrincipalContext extends ParserRuleContext {
+		public PrincipalContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_principal; }
+	 
+		public PrincipalContext() { }
+		public void copyFrom(PrincipalContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class BlocoPrincipalContext extends PrincipalContext {
 		public TerminalNode MAIN() { return getToken(compiladorAcrobatParser.MAIN, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
@@ -1743,17 +1962,14 @@ public class compiladorAcrobatParser extends Parser {
 			return getRuleContext(CorpoFuncContext.class,0);
 		}
 		public TerminalNode CB() { return getToken(compiladorAcrobatParser.CB, 0); }
-		public PrincipalContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_principal; }
+		public BlocoPrincipalContext(PrincipalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterPrincipal(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).enterBlocoPrincipal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitPrincipal(this);
+			if ( listener instanceof compiladorAcrobatListener ) ((compiladorAcrobatListener)listener).exitBlocoPrincipal(this);
 		}
 	}
 
@@ -1761,6 +1977,7 @@ public class compiladorAcrobatParser extends Parser {
 		PrincipalContext _localctx = new PrincipalContext(_ctx, getState());
 		enterRule(_localctx, 46, RULE_principal);
 		try {
+			_localctx = new BlocoPrincipalContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(261);
