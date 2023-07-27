@@ -1,5 +1,6 @@
 DECLARATIONS
     INT num;
+    INT num;
     INT x;
 ALGORITHM
 
@@ -24,7 +25,7 @@ MAIN(){
   ASSIGN x <- 5;
 
   JACKIN(z);
-  JACKOUT(z);
+  JACKOUT(a);
   JACKOUT(10);
   JACKOUT("Oi");
 

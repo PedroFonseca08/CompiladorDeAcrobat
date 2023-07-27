@@ -333,7 +333,9 @@ public class compiladorAcrobatParser extends Parser {
 		}
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
 		public TerminalNode OB() { return getToken(compiladorAcrobatParser.OB, 0); }
-		public CorpoFuncContext corpoFunc() { return getRuleContext(CorpoFuncContext.class,0); }
+		public CorpoFuncContext corpoFunc() {
+			return getRuleContext(CorpoFuncContext.class,0);
+		}
 		public TerminalNode CB() { return getToken(compiladorAcrobatParser.CB, 0); }
 		public BlocoFuncaoContext(FuncaoContext ctx) { copyFrom(ctx); }
 		@Override
@@ -969,9 +971,7 @@ public class compiladorAcrobatParser extends Parser {
 	public static class NLeituraContext extends LeituraContext {
 		public TerminalNode IN() { return getToken(compiladorAcrobatParser.IN, 0); }
 		public TerminalNode OP() { return getToken(compiladorAcrobatParser.OP, 0); }
-		public ValorContext valor() {
-			return getRuleContext(ValorContext.class,0);
-		}
+		public TerminalNode VAR() { return getToken(compiladorAcrobatParser.VAR, 0); }
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
 		public TerminalNode DELIM() { return getToken(compiladorAcrobatParser.DELIM, 0); }
 		public NLeituraContext(LeituraContext ctx) { copyFrom(ctx); }
@@ -997,7 +997,7 @@ public class compiladorAcrobatParser extends Parser {
 			setState(131);
 			match(OP);
 			setState(132);
-			valor();
+			match(VAR);
 			setState(133);
 			match(CP);
 			setState(134);
@@ -2047,7 +2047,7 @@ public class compiladorAcrobatParser extends Parser {
 		"\16\2y}\5\30\r\2z}\5\36\20\2{}\5$\23\2|w\3\2\2\2|x\3\2\2\2|y\3\2\2\2|"+
 		"z\3\2\2\2|{\3\2\2\2}\27\3\2\2\2~\177\7\13\2\2\177\u0080\7\17\2\2\u0080"+
 		"\u0081\5\22\n\2\u0081\u0082\7\20\2\2\u0082\u0083\7\27\2\2\u0083\31\3\2"+
-		"\2\2\u0084\u0085\7\n\2\2\u0085\u0086\7\17\2\2\u0086\u0087\5\22\n\2\u0087"+
+		"\2\2\u0084\u0085\7\n\2\2\u0085\u0086\7\17\2\2\u0086\u0087\7\24\2\2\u0087"+
 		"\u0088\7\20\2\2\u0088\u0089\7\27\2\2\u0089\33\3\2\2\2\u008a\u008b\7\23"+
 		"\2\2\u008b\u008c\7\24\2\2\u008c\u008e\7\16\2\2\u008d\u008f\7\17\2\2\u008e"+
 		"\u008d\3\2\2\2\u008e\u008f\3\2\2\2\u008f\u0090\3\2\2\2\u0090\u0092\5\22"+

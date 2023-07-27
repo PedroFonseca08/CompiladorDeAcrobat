@@ -91,7 +91,7 @@ public class MyListener extends compiladorAcrobatBaseListener {
 
     @Override
     public void exitNLeitura(compiladorAcrobatParser.NLeituraContext ctx) {
-        String id = ctx.valor().getText();
+        String id = ctx.VAR().toString();
         if ( funcaoPrincipal ) {
             if (!tabelaSimbolos.containsKey(id)) {
                 System.out.println("VARIAVEL " + id + " NAO DECLARADA");
@@ -109,6 +109,9 @@ public class MyListener extends compiladorAcrobatBaseListener {
     public void exitNEscrita(compiladorAcrobatParser.NEscritaContext ctx) {
         String id = ctx.valor().getText();
         String tipo = identificarTipoString(id);
+        if(tipo.equals("INDETERMINADO")){
+            tipo = verificarVar(id);
+        }
         if ( tipo.equals("VAR") ){
             if ( funcaoPrincipal ) {
                 if (!tabelaSimbolos.containsKey(id)) {
@@ -128,34 +131,38 @@ public class MyListener extends compiladorAcrobatBaseListener {
     public void exitNCondicao(compiladorAcrobatParser.NCondicaoContext ctx) {
         String id1 = ctx.valor(0).getText();
         String id2 = ctx.valor(1).getText();
-        String tipo1 = identificarTipoString(id1);
-        String tipo2 = identificarTipoString(id2);
+        String id1EhVar = verificarVar(id1);
+        String id2EhVar = verificarVar(id2);
 
-        if ( tipo1.equals("VAR") && tipo2.equals("VAR") ){
+        if ( id1EhVar.equals("VAR") && id2EhVar.equals("VAR") ){
             if ( funcaoPrincipal ) {
-                if (!tabelaSimbolos.containsKey(id1)) {
+                String tipo1 = tabelaSimbolos.get(id1);
+                String tipo2 = tabelaSimbolos.get(id2);
+                if (tipo1 == null) {
                     System.out.println("VARIAVEL " + id1 + " NAO DECLARADA");
                     erro = true;
                 }
-                if (!tabelaSimbolos.containsKey(id2)) {
+                if (tipo2 == null) {
                     System.out.println("VARIAVEL " + id2 + " NAO DECLARADA");
                     erro = true;
                 }
-                if ( !tabelaSimbolos.get(id1).equals(tabelaSimbolos.get(id2) ) ) {
-                    System.out.println("TIPOS INCOMPATÍVEIS");
+                if (tipo1 != tipo2) {
+                    System.out.println("TIPOS INCOMPATÍVEIS: " + id1 + " eh " + tipo1 + " , " + id2 + " eh " + tipo2);
                     erro = true;
                 }
             } else {
-                if (!tabelaSimbolosEscopo.containsKey(id1)) {
+                String tipo1 = tabelaSimbolosEscopo.get(id1);
+                String tipo2 = tabelaSimbolosEscopo.get(id2);
+                if (tipo1 == null) {
                     System.out.println("VARIAVEL " + id1 + " NAO DECLARADA");
                     erro = true;
                 }
-                if (!tabelaSimbolosEscopo.containsKey(id2)) {
+                if (tipo2 == null) {
                     System.out.println("VARIAVEL " + id2 + " NAO DECLARADA");
                     erro = true;
                 }
-                if ( !tabelaSimbolosEscopo.get(id1).equals(tabelaSimbolosEscopo.get(id2) ) ) {
-                    System.out.println("TIPOS INCOMPATÍVEIS");
+                if (tipo1 != tipo2) {
+                    System.out.println("TIPOS INCOMPATÍVEIS: " + id1 + " eh " + tipo1 + " , " + id2 + " eh " + tipo2);
                     erro = true;
                 }
             }
@@ -183,7 +190,6 @@ public class MyListener extends compiladorAcrobatBaseListener {
         String booleanPattern = "^(?i)(true|false)$";
         String floatPattern = "^[-+]?\\d+\\.\\d+$";
         String stringPattern = "^\"([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)\"|'([^'\\\\]*(?:\\\\.[^'\\\\]*)*)'$";
-        String varPattern = "^[a-z].*$";
 
         if (inputString.matches(intPattern)) {
             return "INT";
@@ -193,9 +199,16 @@ public class MyListener extends compiladorAcrobatBaseListener {
             return "FLOAT";
         } else if (inputString.matches(stringPattern)) {
             return "STRING";
-        } else if (inputString.matches(varPattern)) {
-            return "VAR";
         } else {
+            return "INDETERMINADO";
+        }
+    }
+
+    private static String verificarVar(String inputString){
+        String varPattern = "^[a-z].*$";
+        if (inputString.matches(varPattern)) {
+            return "VAR";
+        }else{
             return "INDETERMINADO";
         }
     }
