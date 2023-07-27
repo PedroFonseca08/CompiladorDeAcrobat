@@ -333,9 +333,7 @@ public class compiladorAcrobatParser extends Parser {
 		}
 		public TerminalNode CP() { return getToken(compiladorAcrobatParser.CP, 0); }
 		public TerminalNode OB() { return getToken(compiladorAcrobatParser.OB, 0); }
-		public CorpoFuncContext corpoFunc() {
-			return getRuleContext(CorpoFuncContext.class,0);
-		}
+		public CorpoFuncContext corpoFunc() { return getRuleContext(CorpoFuncContext.class,0); }
 		public TerminalNode CB() { return getToken(compiladorAcrobatParser.CB, 0); }
 		public BlocoFuncaoContext(FuncaoContext ctx) { copyFrom(ctx); }
 		@Override

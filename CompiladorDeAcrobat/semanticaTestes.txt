@@ -1,0 +1,32 @@
+DECLARATIONS
+    INT num;
+    INT x;
+ALGORITHM
+
+FUNCTION INT _max(INT x, INT y, INT z, INT w, INT h, INT j) {
+   ASSIGN z <- 10;
+
+   RETURN 0;
+}
+
+FUNCTION INT _fibo(INT num, BOOL jj){
+   IF((num = jj) || (b = 0)){
+       RETURN num;
+   }
+   ELSE{
+       RETURN _fibo(num - 1) + _fibo(num - 2);
+   }
+   RETURN 0;
+}
+
+MAIN(){
+  ASSIGN num <- 10;
+  ASSIGN x <- 5;
+
+  JACKIN(z);
+  JACKOUT(z);
+  JACKOUT(10);
+  JACKOUT("Oi");
+
+  RETURN 0;
+}

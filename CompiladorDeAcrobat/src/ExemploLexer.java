@@ -22,13 +22,18 @@ public class ExemploLexer {
         return parser;
     }
     public static void main (String[] args){
-        compiladorAcrobatParser parser = getParser("C:\\Users\\User\\Documents\\Aulas\\PROGRAMAÇÃO\\COMPUTADOR\\COMPILADORES\\EXERCICIOS\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\semanticaTestes.txt");
+        compiladorAcrobatParser parser = getParser("C:\\Users\\Vitoncio\\Desktop\\5º Período\\Compiladores\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\semanticaTestes.txt");
         ParseTree ast = parser.inicio();
         System.out.println(ast.toStringTree());
         MyListener listener = new MyListener();
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(listener,ast);
-        System.out.println("Tabela: " + listener.getTabelaSimbolos().toString());
+        if ( listener.getErro() ){
+            throw new RuntimeException("ERRO AO COMPILAR!");
+        }
+        else {
+            System.out.println("Tabela: " + listener.getTabelaSimbolos().toString());
+        }
 
         /*
         String filename = "C:\\Users\\User\\Documents\\Aulas\\PROGRAMAÇÃO\\COMPUTADOR\\COMPILADORES\\EXERCICIOS\\CompiladorDeAcrobat\\CompiladorDeAcrobat\\codigoFibo.txt";

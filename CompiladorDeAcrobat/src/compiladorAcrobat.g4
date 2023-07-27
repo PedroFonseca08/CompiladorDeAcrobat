@@ -18,7 +18,7 @@ valor: (valorRestrito | operacao | funcaoChamada) #NValor;
 corpoFunc: (instrucao)* retorno #NCorpoFuncao;
 instrucao: (atribuicao|leitura|escrita|compIF|repeticao) #NInstrucao;
 escrita: 'JACKOUT' '('(valor)')'';' #NEscrita;
-leitura: 'JACKIN' '('valor')'';' #NLeitura;
+leitura: 'JACKIN' '('VAR')'';' #NLeitura;
 atribuicao: ASGN VAR ARROW ('(')?(valor)(')')?';' #NAtribuicao;
 compIF: 'IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}'  compELIF #NCompIF;
 compELIF: 'ELSE IF' '(' condicao ')' '{' (instrucao)* (retorno)?'}' compELIF #NCompELIF| compELSE #NCompELIF;
